@@ -27,12 +27,15 @@ public class Main {
 		AnalysisEngineDescription tokenizer = AnalysisEngineFactory
 				.createEngineDescription(BreakIteratorSegmenter.class);
 
+		// initialize the new component
+		AnalysisEngineDescription neTagger = AnalysisEngineFactory.createEngineDescription(MyTagger.class);
+
 		// initialize output writer
 		AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(Conll2002Writer.class,
 				Conll2002Writer.PARAM_TARGET_LOCATION, "target", Conll2002Writer.PARAM_OVERWRITE, true);
 
 		// run the pipeline
-		SimplePipeline.runPipeline(readerDescription, tokenizer, writer);
+		SimplePipeline.runPipeline(readerDescription, tokenizer, neTagger, writer);
 
 	}
 
