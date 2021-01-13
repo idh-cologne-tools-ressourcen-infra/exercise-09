@@ -10,7 +10,7 @@ import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.CollectionReaderFactory;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 import org.apache.uima.resource.ResourceInitializationException;
-import org.dkpro.core.io.conll.Conll2000Writer;
+import org.dkpro.core.io.conll.Conll2002Writer;
 import org.dkpro.core.io.text.TextReader;
 import org.dkpro.core.tokit.BreakIteratorSegmenter;
 
@@ -28,8 +28,8 @@ public class Main {
 				.createEngineDescription(BreakIteratorSegmenter.class);
 
 		// initialize output writer
-		AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(Conll2000Writer.class,
-				Conll2000Writer.PARAM_TARGET_LOCATION, "target");
+		AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(Conll2002Writer.class,
+				Conll2002Writer.PARAM_TARGET_LOCATION, "target", Conll2002Writer.PARAM_OVERWRITE, true);
 
 		// run the pipeline
 		SimplePipeline.runPipeline(readerDescription, tokenizer, writer);
