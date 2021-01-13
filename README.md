@@ -48,4 +48,5 @@ Commit your program to the repository and push it to the repository.
 - [UIMA Javadoc](https://javadoc.io/doc/org.apache.uima/uimaj-core/latest/index.html)
 - [UIMAfit Javadoc](https://javadoc.io/doc/org.apache.uima/uimafit-core/latest/index.html)
 
-
+- [DKPro core](https://dkpro.github.io/dkpro-core/)
+- 
