@@ -1,4 +1,4 @@
-package de.ukoeln.idh.teaching.tri.ex09;
+package de.ukoeln.idh.teaching.tri.ex09; 
 
 import java.io.IOException;
 
