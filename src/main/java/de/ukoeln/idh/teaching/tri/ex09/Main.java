@@ -26,7 +26,10 @@ public class Main {
 		// initialize tokenizer
 		AnalysisEngineDescription tokenizer = AnalysisEngineFactory
 				.createEngineDescription(BreakIteratorSegmenter.class);
-
+		
+		// initialize namedentity
+				AnalysisEngineDescription namedEntity = AnalysisEngineFactory
+						.createEngineDescription(NET.class);
 		// initialize output writer
 		AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(Conll2002Writer.class,
 				Conll2002Writer.PARAM_TARGET_LOCATION, "target", Conll2002Writer.PARAM_OVERWRITE, true);
