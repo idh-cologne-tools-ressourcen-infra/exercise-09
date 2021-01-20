@@ -11,10 +11,22 @@ public class MyTagger extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void process(JCas jcas) throws AnalysisEngineProcessException {
+		// iterate over all tokens
 		for (Token token : jcas.select(Token.class)) {
-			if (Character.isUpperCase(token.getCoveredText().charAt(0))) {
+
+			// get first character of the token
+			char firstCharacter = token.getCoveredText().charAt(0);
+
+			// check whether it's upper case
+			if (Character.isUpperCase(firstCharacter)) {
+
+				// create a new NamedEntity annotation
 				NamedEntity ne = new NamedEntity(jcas, token.getBegin(), token.getEnd());
+
+				// set a feature value to PER
 				ne.setValue("PER");
+
+				// add the feature structure to CAS indexes
 				ne.addToIndexes();
 			}
 		}
