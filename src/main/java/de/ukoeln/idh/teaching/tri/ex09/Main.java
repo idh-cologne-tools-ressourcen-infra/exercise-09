@@ -37,7 +37,7 @@ public class Main {
 
 		// run the pipeline
 		SimplePipeline.runPipeline(readerDescription, tokenizer, writer, NETagger);
-
+		System.out.println("Finished");
 	}
 
 }
