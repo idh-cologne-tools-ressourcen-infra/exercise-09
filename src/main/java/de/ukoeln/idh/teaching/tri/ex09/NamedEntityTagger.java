@@ -11,21 +11,18 @@ public class NamedEntityTagger extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void process(JCas jcas) throws AnalysisEngineProcessException {
-		// iterate over all tokens
+		//TODO: implement annotation and type
+		// iterate over tokens
 		for (Token token : jcas.select(Token.class)) {
-
-			// get first character of the token
-			char firstCharacter = token.getCoveredText().charAt(0);
-
-			// check whether it's upper case
-			if (Character.isUpperCase(firstCharacter)) {
+			// TODO: uppercase -> new NE (PER)
+			// check uppercase
+			char first = token.getCoveredText().charAt(0);
+			if (Character.isUpperCase(first)) {
 
 				// create a new NamedEntity annotation
 				NamedEntity ne = new NamedEntity(jcas, token.getBegin(), token.getEnd());
-
 				// set a feature value to PER
 				ne.setValue("PER");
-
 				// add the feature structure to CAS indexes
 				ne.addToIndexes();
 			}
